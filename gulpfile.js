@@ -1,7 +1,12 @@
 ﻿const path = require('path');			
 const gulp = require('gulp'),
+			gulpRename = require('gulp-rename'),
 			gulpFileInclude = require('gulp-file-include'),
-			gulpLess = require('gulp-less');
+			gulpLess = require('gulp-less'),
+			gulpForeach = require('gulp-foreach'),
+			gulpBatchReplace  = require('gulp-batch-replace');
+			// ToDo: bundle js/css link in html
+			// gulpHtmlReplace = require('gulp-html-replace');
 const	browserSync = require('browser-sync').create(),
 			reload = browserSync.reload;
 
@@ -23,16 +28,36 @@ gulp.task('less', () => {
 });
 
 gulp.task('html', () => {
-	return gulp.src(path.join(tplDir, '*.html'))
-		.pipe(gulpFileInclude({
-			prefix: '@@',
-			basepath: '@file',	// for resolving path passed to @@include method
-			indent: true
+	return gulp.src(path.join(tplDir, 'content/*.html'), {read: false})	// make processing faster
+		.pipe(gulpForeach(function(stream, file) {
+			var filename = path.basename(file.path);
+			var replaceThese = [
+				['{{filename}}', filename]
+			];
+			return gulp.src(path.join(tplDir, 'layout.html'))
+				.pipe(gulpBatchReplace(replaceThese))
+				.pipe(gulpFileInclude({
+					prefix: '@@',
+					basepath: '@file',	// for resolving path passed to @@include method
+					indent: true
+				}))
+				.pipe(gulpRename(filename))
+				.pipe(gulp.dest('src'))
 		}))
-		.pipe(gulp.dest('src'))
 		.pipe(reload({
 			stream: true
 		}));
+
+	// return gulp.src(path.join(tplDir, 'layout.html'))
+	// 	.pipe(gulpFileInclude({
+	// 		prefix: '@@',
+	// 		basepath: '@file',	// for resolving path passed to @@include method
+	// 		indent: true
+	// 	}))
+	// 	.pipe(gulp.dest('src'))
+	// 	.pipe(reload({
+	// 		stream: true
+	// 	}));
 });
 
 // move bower files to src directory
