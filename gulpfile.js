@@ -39,10 +39,12 @@ gulp.task('html', () => {
 const bowerList = [
 	'zui/dist/**/zui.css',	// @font-face refer to zenicon.* with a relative directory
 	'zui/dist/**/zenicon.*',
-	'normalize-css/normalize.css',
+	'zui/dist/js/zui.min.js',
 	'jquery/jquery.min.js',
 	'html5shiv/dist/html5shiv.min.js',
-	'object-fit-polyfill/dist/object-fit-polyfill.js'
+	'object-fit-polyfill/dist/object-fit-polyfill.js',
+	'vminpoly/*.js',
+	'normalize-css/normalize.css'
 ];
 gulp.task('bower', () => {
 	return gulp.src(bowerList.map(item => `bower_components/${item}`))
