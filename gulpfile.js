@@ -10,10 +10,10 @@ const lessDir = path.join(__dirname, 'src/less'),
 			cssDir = path.join(__dirname, 'src/css'),
 			publicDir = path.join(__dirname, 'src/public');
 
-const lessPath = path.join(lessDir, '**.less'),
-			tplPath = path.join(tplDir, '**.html');
+const lessPath = path.join(lessDir, '*.less'),
+			tplPath = [path.join(tplDir, '**/*.html'), path.join(tplDir, '*.html')];
 
-gulp.task('less', () => {
+gulp.task('less', () => {	
 	return gulp.src(lessPath)
 	  .pipe(gulpLess())
 	  .pipe(gulp.dest(cssDir))
@@ -26,7 +26,8 @@ gulp.task('html', () => {
 	return gulp.src(path.join(tplDir, '*.html'))
 		.pipe(gulpFileInclude({
 			prefix: '@@',
-			basepath: '@file'	// for resolving path passed to @@include method 
+			basepath: '@file',	// for resolving path passed to @@include method
+			indent: true
 		}))
 		.pipe(gulp.dest('src'))
 		.pipe(reload({
@@ -36,10 +37,12 @@ gulp.task('html', () => {
 
 // move bower files to src directory
 const bowerList = [
-	'zui/dist/css/zui.css',
+	'zui/dist/**/zui.css',	// @font-face refer to zenicon.* with a relative directory
+	'zui/dist/**/zenicon.*',
 	'normalize-css/normalize.css',
+	'jquery/jquery.min.js',
 	'html5shiv/dist/html5shiv.min.js',
-	'jquery/jquery.min.js'
+	'object-fit-polyfill/dist/object-fit-polyfill.js'
 ];
 gulp.task('bower', () => {
 	return gulp.src(bowerList.map(item => `bower_components/${item}`))

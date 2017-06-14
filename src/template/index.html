@@ -7,11 +7,12 @@
   	<script src="/public/html5shiv.min.js"></script>
 	<![endif]-->
 	<link rel="stylesheet" href="/public/normalize.css">
+	<link rel="stylesheet" href="/public/css/zui.css">
 	<link rel="stylesheet" href="/css/header.css">
 </head>
 <body>
-<header class="header container-fixed">
-	@@include('partial/header.html')		
+<header class="header container-fluid">
+	@@include('partial/header.html')
 </header>	
 <aside class="aside container">
 	
@@ -22,6 +23,7 @@
 <footer class="footer container-fluid">
 		
 </footer>
+<script src="/public/object-fit-polyfill.js"></script>
 <script id="__bs_script__">//<![CDATA[
     document.write("<script async src='http://HOST:3000/browser-sync/browser-sync-client.js?v=2.18.12'><\/script>".replace("HOST", location.hostname));
 //]]></script>
