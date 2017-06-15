@@ -1,0 +1,92 @@
+.resource-manage-tree-header {
+  background-color: #3280fc;
+  height: 40px;
+  line-height: 40px;
+  color: #fff;
+  font-size: 14px;
+  padding-left: 20px;
+}
+.header-text {
+  margin-left: 10px;
+}
+.resource-manage-tree-content .tree i {
+  margin-right: 5px;
+}
+.resource-manage-detail-head {
+  background-color: #3280fc;
+  height: 40px;
+  line-height: 40px;
+  color: #fff;
+  font-size: 14px;
+  /*padding: 0 20px;*/
+  margin: 0;
+  text-align: center;
+}
+.opera-btns {
+  margin-top: 5px;
+}
+.button-box {
+  margin: 0;
+}
+.icon-table {
+  margin-right: 10px;
+}
+.red-star {
+  color: red;
+}
+.input-group {
+  margin: 12px 0;
+}
+.input-group,
+.select-type,
+.select-use {
+  height: 40px;
+  line-height: 40px;
+}
+.input-group input {
+  height: 100%;
+}
+.input-group .btn {
+  height: 40px;
+  line-height: 40px;
+  padding: 0 12px;
+}
+.btn-groups {
+  margin-top: 20px;
+}
+.btn-groups .btn-save {
+  margin-right: 50px;
+}
+.btn-box {
+  width: 200px;
+  margin: 0 auto;
+}
+/*图标容器样式*/
+#iconsExample {
+  /*position: relative;*/
+  padding: 20px;
+  display: none;
+  border: 1px solid #ddd;
+  border-style: solid;
+  outline: 0;
+}
+.iconlist {
+  list-style: none;
+}
+.iconlist li {
+  width: 70px;
+  height: 70px;
+  padding: 20px;
+  cursor: pointer;
+  float: left;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.iconlist li i {
+  font-size: 30px;
+  color: #00ceff;
+}
+.iconlist i:hover {
+  font-size: 50px;
+}
