@@ -70,7 +70,9 @@ const bowerList = [
 	'object-fit-polyfill/dist/object-fit-polyfill.js',
 	'vminpoly/*.js',
 	'normalize-css/normalize.css',
-	'zui/dist/lib/chart/zui.chart.min.js'
+	'zui/dist/lib/chart/zui.chart.min.js',
+	'zui/dist/lib/datatable/zui.datatable.css',
+	'zui/dist/lib/datatable/zui.datatable.js'
 ];
 gulp.task('bower', () => {
 	return gulp.src(bowerList.map(item => `bower_components/${item}`))
