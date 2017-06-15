@@ -1,5 +1,5 @@
 {
-  "name": "mxm-html",
+  "name": "mxm-template",
   "version": "0.0.1",
   "description": "static template for mxm website which is based on zui",
   "main": "index.js",
