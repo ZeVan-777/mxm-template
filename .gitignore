@@ -1,0 +1,7 @@
+﻿bower_components
+node_modules
+*.log
+*.cache
+src/public
+src/css
+src/*.html
