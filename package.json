@@ -13,12 +13,16 @@
   ],
   "author": "ZeVan <zhengyifan@coracle.com>",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ZeVan-777/mxm-template"
+  },
   "devDependencies": {
     "browser-sync": "^2.18.12",
     "gulp": "^3.9.1",
     "gulp-batch-replace": "0.0.0",
     "gulp-file-include": "^1.1.0",
-    "gulp-foreach": "^0.1.0",
+    "gulp-flatmap": "^1.0.0",
     "gulp-less": "^3.3.0",
     "gulp-rename": "^1.2.2"
   }
