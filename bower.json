@@ -1,0 +1,23 @@
+{
+  "name": "mxm-template",
+  "description": "static template for mxm website which is based on zui",
+  "main": "index.js",
+  "authors": [
+    "ZeVan <zhengyifan@coracle.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "zui",
+    "responsive",
+    "gulp"
+  ],
+  "homepage": "https://github.com/ZeVan-777/mxm-template",
+  "dependencies": {
+    "html5shiv": "^3.7.3",
+    "jquery": "1.9.1",
+    "object-fit-polyfill": "^0.1.0",
+    "normalize-css": "normalize.css#^7.0.0",
+    "vminpoly": "*",
+    "zui": "^1.6.0"
+  }
+}
