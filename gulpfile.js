@@ -26,7 +26,7 @@ gulp.task('less', () => {
 	return gulp.src(lessPath)
 	  .pipe(gulpLess())
 	  .pipe(gulpAutoprefixer({
-	  	browser: [
+	  	browsers: [
 	  		'last 4 versions',
 	  		'Android >= 4.0'
 	  	]
@@ -67,8 +67,7 @@ gulp.task('html', () => {
 				});
 			}
 
-			// js&css dependent'stream that was delared in html		
-			console.log(refList.map(path => path.replace('./public/', './src/public/')));
+			// js&css dependent'stream that was delared in html	
 			var domStream = gulp.src(refList.map(path => path.replace('./public/', './src/public/')), {base: './src'});
 			var replaceThese = [
 				['{{fileName}}', fileName],
