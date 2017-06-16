@@ -4,6 +4,7 @@ const gulp = require('gulp'),
 			gulpFileInclude = require('gulp-file-include'),
 			gulpLess = require('gulp-less'),
 			gulpForeach = require('gulp-foreach'),
+			autoprefixer = require('gulp-autoprefixer'),
 			gulpBatchReplace  = require('gulp-batch-replace');
 			// ToDo: bundle js/css link in html
 			// gulpHtmlReplace = require('gulp-html-replace');
@@ -21,6 +22,9 @@ const lessPath = path.join(lessDir, '*.less'),
 gulp.task('less', () => {	
 	return gulp.src(lessPath)
 	  .pipe(gulpLess())
+		.pipe(autoprefixer({
+      browsers: ['last 4 versions', 'Android >= 4.0']
+		}))
 	  .pipe(gulp.dest(cssDir))
 	  .pipe(reload({
 	  	stream: true
