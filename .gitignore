@@ -1,8 +1,21 @@
-﻿bower_components/
-node_modules/
+﻿# Logs
+logs
 *.log
-*.cache
-src/public/
-src/css/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Bower dependency directory (https://bower.io/)
+bower_components
+
+# Dependency directories
+node_modules/
+
+# IDEs
+.idea
+.vscode
+
+# output of gulp in dev-enviroment
+src/public
+src/css
 src/*.html
-.idea/
