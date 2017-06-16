@@ -6,8 +6,7 @@ const gulp = require('gulp'),
 			gulpFlatmap = require('gulp-flatmap'),
 			gulpBatchReplace  = require('gulp-batch-replace'),
 			gulpInject = require('gulp-inject'),
-			gulpDeleteLines = require('gulp-delete-lines'),
-			gulpAutoprefixer = require('gulp-autoprefixer');
+			gulpAutoprefixer = require('gulp-autoprefixer');			
 			// ToDo: bundle js/css link in html
 			// gulpHtmlReplace = require('gulp-html-replace');
 const	browserSync = require('browser-sync').create(),
