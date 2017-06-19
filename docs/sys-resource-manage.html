@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<!--[if lt IE 9]>
+  	<script src="/public/html5shiv.min.js"></script>
+	<![endif]-->
+	<link rel="stylesheet" href="/public/normalize.css">
+	<link rel="stylesheet" href="/public/css/zui.css">
+	<link rel="stylesheet" href="/css/header.css">
+	<link rel="stylesheet" href="/css/sidebar.css">
+	<link rel="stylesheet" href="/css/footer.css">
+	<link rel="stylesheet" href="/css/index.css">
+	<link rel="stylesheet" href="/css/sys-resource-manage.css">
+	<style>
+		html, body {
+			width: 100%;
+			height: 100%;
+		}
+	</style>
+</head>
+<body>
+<header class="header container-fluid">
+	﻿<div class="header__logo col-sm-2 pull-left">
+		<img src="/images/logo.png" alt="圆舟xSimple" class="logo__image" data-object-fit="contain">
+	</div>
+	<div class="header__menu col-sm-2 pull-right">
+		<div class="dropdown dropdown-hover pull-right">
+			<div class="header__profile" data-toggle="dropdown">
+				<img src="/images/avatar.jpg" alt="头像" class="img-circle profile__avatar">
+				<span class="profile__username">管理员</span>
+				<i class="profile__icon icon-chevron-down"></i>
+			</div>
+			<ul class="dropdown-menu">
+				<li>
+					<a href="javascript:void(0)" class="menu__link"><i class="menu__icon icon-lock"></i>修改密码</a>
+				</li>
+				<li>
+					<a href="javascript:void(0)"><i class="menu__icon icon-signout"></i>我要退出</a>
+				</li>
+			</ul>	
+		</div>
+	</div>
+</header>	
+<section class="l-main l-main--scrollable container-fluid">
+	<main class="l-main__content">
+		﻿<nav class="aside l-aside content__item menu pull-left">
+			<button type="button" class="btn btn--menu pull-right"><i class="icon icon-bars"></i></button>
+			<ul class="nav" id="nav">		
+		    <li class="nav__level0"><a href="javascript:;"><i class="icon icon-home"></i>首页</a></li>
+		    <li class="nav__level0"><a href="javascript:;"><i class="icon icon-cogs"></i>系统设置</a></li>
+		    <li class="nav__level0 nav-parent">
+		      <a href="javascript:;"><i class="icon icon-time"></i> Time</a>
+		      <ul class="nav">
+		        <li><a href="javascript:;">Today</a></li>
+		        <li><a href="javascript:;">Tomarrow</a></li>
+		        <li><a href="javascript:;">Yestorday</a></li>
+		        <li><a href="javascript:;">This Week</a></li>
+		      </ul>
+		    </li>
+		    <li class="nav__level0"><a href="javascript:;"><i class="icon icon-trash"></i> Trash</a></li>
+		    <li class="nav__level0"><a href="javascript:;"><i class="icon icon-list-ul"></i> All</a></li>
+		    <li class="nav__level0 active show nav-parent">
+		      <a href="javascript:;"><i class="icon icon-tasks"></i> Status</a>
+		      <ul class="nav">
+		        <li><a href="javascript:;"><i class="icon icon-circle-blank"></i> Ready</a></li>
+		        <li class="active"><a href="javascript:;"><i class="icon icon-play-sign"></i> Ongoing</a></li>
+		        <li><a href="javascript:;"><i class="icon icon-ok-sign"></i> Completed</a></li>
+		      </ul>
+		    </li>
+		  </ul>
+		</nav>
+		<section class="l-page content__item pull-left">
+			<div class="page-content-wrapper">
+			  <div class="row">
+			    <div class="col-md-12 col-sm-12">
+			      <ol class="breadcrumb">
+			        <li><a href="your/url/"><i class="icon icon-cog"></i>系统设置</a></li>
+			        <li><a href="your/url/"><i class="icon icon-database"></i>资源管理</a></li>
+			      </ol>
+			    </div>
+			  </div>
+			  <div class="row">
+			    <div class="col-md-4 col-sm-4 resource-manage-tree">
+			      <div class="resource-manage-tree-header">
+			        <i class="icon icon-branch"></i><span class="header-text">资源结构树</span>
+			      </div>
+			      <div class="resource-manage-tree-content">
+			        <ul class="tree tree-lines" data-ride="tree">
+			          <li><a href="#"><i class="icon icon-home"></i>主页</a></li>
+			          <li>
+			            <a href="#"><i class="icon icon-cog"></i>系统设置</a>
+			            <ul>
+			              <li>
+			                <a href="#">资源管理</a>
+			              </li>
+			              <li>
+			                <a href="#">组织管理</a>
+			              </li>
+			              <li>
+			                <a href="#">员工管理</a>
+			              </li>
+			              <li>
+			                <a href="#">用户管理</a>
+			              </li>
+			              <li>
+			                <a href="#">角色管理</a>
+			              </li>
+			              <li>
+			                <a href="#">团队管理</a>
+			              </li>
+			              <li>
+			                <a href="#">岗位管理</a>
+			              </li>
+			              <li>
+			                <a href="#">数据权限配置</a>
+			              </li>
+			              <li>
+			                <a href="#">定时任务管理</a>
+			              </li>
+			              <li>
+			                <a href="#">分权角色</a>
+			              </li>
+			              <li>
+			                <a href="#">用户分组</a>
+			              </li>
+			            </ul>
+			          </li>
+			          <li>
+			            <a href="#"><i class="icon icon-shield"></i>第三方权限</a>
+			            <ul>
+			              <li>
+			                <a href="#">第三方系统</a>
+			              </li>
+			              <li>
+			                <a href="#">第三方用户</a>
+			              </li>
+			            </ul>
+			          </li>
+			          <li>
+			            <a href="#"><i class="icon icon-qrcode"></i>应用管理</a>
+			            <ul>
+			              <li>
+			                <a href="#">应用设置</a>
+			              </li>
+			              <li>
+			                <a href="#">应用版本</a>
+			              </li>
+			              <li>
+			                <a href="#">应用清单</a>
+			              </li>
+			              <li>
+			                <a href="#">上架申请</a>
+			              </li>
+			              <li>
+			                <a href="#">上架审批</a>
+			              </li>
+			              <li>
+			                <a href="#">模块管理</a>
+			              </li>
+			              <li>
+			                <a href="#">角色管理</a>
+			              </li>
+			              <li>
+			                <a href="#">功能管理</a>
+			              </li>
+			            </ul>
+			          </li>
+			          <li>
+			            <a href="#"><i class="icon icon-shopping-cart"></i>应用商店</a>
+			            <ul>
+			              <li>
+			                <a href="#">应用分类</a>
+			              </li>
+			              <li>
+			                <a href="#">模块管理</a>
+			              </li>
+			              <li>
+			                <a href="#">布局管理</a>
+			              </li>
+			              <li>
+			                <a href="#">应用标签</a>
+			              </li>
+			              <li>
+			                <a href="#">应用清单</a>
+			              </li>
+			              <li>
+			                <a href="#">轻应用清单</a>
+			              </li>
+			            </ul>
+			          </li>
+
+			          <li>
+			            <a href="#"><i class="icon icon-umbrella"></i>安全管理</a>
+			            <ul>
+			              <li>
+			                <a href="#">日志记录</a>
+			              </li>
+			              <li>
+			                <a href="#">设备状态</a>
+			              </li>
+			              <li>
+			                <a href="#">设备管理</a>
+			              </li>
+			              <li>
+			                <a href="#">证书管理</a>
+			              </li>
+			              <li>
+			                <a href="#">消息查询</a>
+			              </li>
+			            </ul>
+			          </li>
+			          <li>
+			            <a href="#"><i class="icon icon-sign-blank"></i>平台管理</a>
+			            <ul>
+			              <li>
+			                <a href="#">意见反馈</a>
+			              </li>
+			              <li>
+			                <a href="#">客服管理</a>
+			              </li>
+			            </ul>
+			          </li>
+			          <li>
+			            <a href="#"><i class="icon icon-level-down"></i>导入管理</a>
+			            <ul>
+			              <li>
+			                <a href="#">用户导入</a>
+			              </li>
+			              <li>
+			                <a href="#">组织用户导入</a>
+			              </li>
+			            </ul>
+			          </li>
+			          <li>
+			            <a href="#"><i class="icon icon-anchor"></i>数据字典管理</a>
+			            <ul>
+			              <li>
+			                <a href="#">数据字典</a>
+			              </li>
+			            </ul>
+			          </li>
+			          <li>
+			            <a href="#"><i class="icon icon-user"></i>群组管理</a>
+			            <ul>
+			              <li>
+			                <a href="#">群组列表</a>
+			              </li>
+			            </ul>
+			          </li>
+			          <li>
+			            <a href="#"><i class="icon icon-list-alt"></i>配置中心</a>
+			            <ul>
+			              <li>
+			                <a href="#">配置管理</a>
+			              </li>
+			              <li>
+			                <a href="#">表情包管理</a>
+			              </li>
+			              <li>
+			                <a href="#">配置中心</a>
+			              </li>
+			            </ul>
+			          </li>
+			          <li>
+			            <a href="#"><i class="icon icon-file-word"></i>日志管理</a>
+			            <ul>
+			              <li>
+			                <a href="#">操作日志</a>
+			              </li>
+			              <li>
+			                <a href="#">安全日志</a>
+			              </li>
+			            </ul>
+			          </li>
+			          <li>
+			            <a href="#"><i class="icon icon-window"></i>BPM工作流引擎</a>
+			            <ul>
+			              <li>
+			                <a href="#">流程列表</a>
+			              </li>
+			              <li>
+			                <a href="#">完成列表</a>
+			              </li>
+			              <li>
+			                <a href="#">发起列表</a>
+			              </li>
+			              <li>
+			                <a href="#">已办列表</a>
+			              </li>
+			              <li>
+			                <a href="#">待办列表</a>
+			              </li>
+			            </ul>
+			          </li>
+			        </ul>
+			      </div>
+			    </div>
+			    <div class="col-md-8 col-sm-8">
+			      <div class="resource-manage-detail">
+			        <div class="resource-manage-detail-head">
+			          <i class="icon icon-table"></i>资源详情
+			          <div class="row opera-btns">
+			            <div class="col-md-3 col-sm-3">
+			              <button class="btn btn-warning add-parent" type="button">新增父资源</button>
+			            </div>
+			            <div class="col-md-3 col-sm-3">
+			              <button class="btn btn-success" type="button" disabled>新增子资源</button>
+			            </div>
+			            <div class="col-md-3 col-sm-3">
+			              <button class="btn btn-warning" type="button" disabled>编辑此资源</button>
+			            </div>
+			            <div class="col-md-3 col-sm-3">
+			              <button class="btn btn-danger" type="button" disabled>删除此资源</button>
+			            </div>
+			          </div>
+			        </div>
+			        <!--资源管理详情部分-->
+			        <div class="row">
+			          <div class="col-md-12 col-sm-12">
+			            <div class="input-group">
+			              <span class="input-group-addon">名称<i class="red-star">*</i></span>
+			              <input type="text" class="form-control" placeholder="" disabled>
+			            </div>
+			          </div>
+			        </div>
+			        <div class="row">
+			          <div class="col-md-12">
+			            <div class="input-group">
+			              <span class="input-group-addon">编码<i class="red-star">*</i></span>
+			              <input type="text" class="form-control" placeholder="" disabled>
+			            </div>
+			          </div>
+			        </div>
+			        <div class="row">
+			          <div class="col-md-12 col-sm-12">
+			            <div class="input-group">
+			              <span class="input-group-addon">图标<i class="red-star">*</i></span>
+			              <input type="text" class="form-control sys-icon-name" placeholder="请选择系统图标" disabled>
+			              <span class="input-group-btn">
+			              <button class="btn btn-primary select-icon" type="button"
+			                      data-custom="#iconsExample"
+			                      data-toggle="modal"
+			                      data-size="fullscreen"
+			                      disabled>选择图标</button>
+			            </span>
+			            </div>
+			          </div>
+			        </div>
+			        <div class="row">
+			          <div class="col-md-12 col-sm-12">
+			            <div class="input-group">
+			              <span class="input-group-addon">类型<i class="red-star">*</i></span>
+			              <select class="form-control select-type" disabled>
+			                <option value="menu">MENU</option>
+			                <option value="url">URL</option>
+			                <option value="button">BUTTON</option>
+			                <option value="mobile">MOBILE</option>
+			                <option value="api">API</option>
+			                <option value="module">MODULE</option>
+			                <option value="function">FUNCTION</option>
+			              </select>
+
+			            </div>
+			          </div>
+			        </div>
+			        <div class="row">
+			          <div class="col-md-12 col-sm-12">
+			            <div class="input-group">
+			              <span class="input-group-addon">属性<i class="red-star">*</i></span>
+			              <input type="text" class="form-control" placeholder="" disabled>
+			            </div>
+			          </div>
+			        </div>
+			        <div class="row">
+			          <div class="col-md-12 col-sm-12">
+			            <div class="input-group">
+			              <span class="input-group-addon">排序<i class="red-star">*</i></span>
+			              <input type="text" class="form-control" placeholder="" disabled>
+			            </div>
+			          </div>
+			        </div>
+			        <div class="row">
+			          <div class="col-md-12 col-sm-12">
+			            <div class="input-group">
+			              <span class="input-group-addon">状态<i class="red-star">*</i></span>
+			              <select class="form-control select-use" disabled>
+			                <option value="use">启用</option>
+			                <option value="no-use">不启用</option>
+			              </select>
+			            </div>
+			          </div>
+			        </div>
+			        <div class="btn-groups">
+			          <div class="btn-box">
+			            <button type="button" class="btn btn-primary btn-save" disabled>保存</button>
+			            <button type="button" class="btn btn-cancle" disabled>取消</button>
+			          </div>
+			        </div>
+			      </div>
+			    </div>
+			  </div>
+
+			  <!--图标容器-start-->
+
+			  <!--<p>我们提供了<span class="icons-count">338</span>个图标：</p>-->
+			  <div class="example" id="iconsExample" name="iconsExample">
+			    <ul class="clearfix iconlist">
+			      <li><i class="icon-resize"></i></li>
+			      <li><i class="icon-expand-full"></i></li>
+			      <li><i class="icon-collapse-full"></i></li>
+			      <li><i class="icon-yinyang"></i></li>
+			      <li><i class="icon-window"></i></li>
+			      <li><i class="icon-window-alt"></i></li>
+			      <li><i class="icon-carousel"></i></li>
+			      <li><i class="icon-spinner-snake"></i></li>
+			      <li><i class="icon-spinner-indicator"></i></li>
+			      <li><i class="icon-check-board"></i></li>
+			      <li><i class="icon-bar-chart"></i></li>
+			      <li><i class="icon-github"></i></li>
+			      <li><i class="icon-dot-circle"></i></li>
+			      <li><i class="icon-cube-alt"></i></li>
+			      <li><i class="icon-cubes"></i></li>
+			      <li><i class="icon-file-pdf"></i></li>
+			      <li><i class="icon-file-word"></i></li>
+			      <li><i class="icon-file-excel"></i></li>
+			      <li><i class="icon-file-powerpoint"></i></li>
+			      <li><i class="icon-file-image"></i></li>
+			      <li><i class="icon-file-archive"></i></li>
+			      <li><i class="icon-file-audio"></i></li>
+			      <li><i class="icon-file-movie"></i></li>
+			      <li><i class="icon-file-code"></i></li>
+			      <li><i class="icon-circle-o-notch"></i></li>
+			      <li><i class="icon-qq"></i></li>
+			      <li><i class="icon-wechat"></i></li>
+			      <li><i class="icon-history"></i></li>
+			      <li><i class="icon-circle-thin"></i></li>
+			      <li><i class="icon-sliders"></i></li>
+			      <li><i class="icon-newspaper-o"></i></li>
+			      <li><i class="icon-calculator"></i></li>
+			      <li><i class="icon-paint-brush"></i></li>
+			      <li><i class="icon-area-chart"></i></li>
+			      <li><i class="icon-pie-chart"></i></li>
+			      <li><i class="icon-line-chart"></i></li>
+			      <li><i class="icon-toggle-off"></i></li>
+			      <li><i class="icon-toggle-on"></i></li>
+			      <li><i class="icon-diamond"></i></li>
+			      <li><i class="icon-venus"></i></li>
+			      <li><i class="icon-mars"></i></li>
+			      <li><i class="icon-server"></i></li>
+			      <li><i class="icon-music"></i></li>
+			      <li><i class="icon-search"></i></li>
+			      <li><i class="icon-envelope"></i></li>
+			      <li><i class="icon-heart"></i></li>
+			      <li><i class="icon-star"></i></li>
+			      <li><i class="icon-star-empty"></i></li>
+			      <li><i class="icon-user"></i></li>
+			      <li><i class="icon-film"></i></li>
+			      <li><i class="icon-th-large"></i></li>
+			      <li><i class="icon-th"></i></li>
+			      <li><i class="icon-th-list"></i></li>
+			      <li><i class="icon-check"></i></li>
+			      <li><i class="icon-times"></i></li>
+			      <li><i class="icon-zoom-in"></i></li>
+			      <li><i class="icon-zoom-out"></i></li>
+			      <li><i class="icon-off"></i></li>
+			      <li><i class="icon-cog"></i></li>
+			      <li><i class="icon-trash"></i></li>
+			      <li><i class="icon-home"></i></li>
+			      <li><i class="icon-file-o"></i></li>
+			      <li><i class="icon-time"></i></li>
+			      <li><i class="icon-download-alt"></i></li>
+			      <li><i class="icon-download"></i></li>
+			      <li><i class="icon-upload"></i></li>
+			      <li><i class="icon-inbox"></i></li>
+			      <li><i class="icon-play-circle"></i></li>
+			      <li><i class="icon-repeat"></i></li>
+			      <li><i class="icon-refresh"></i></li>
+			      <li><i class="icon-list-alt"></i></li>
+			      <li><i class="icon-lock"></i></li>
+			      <li><i class="icon-flag"></i></li>
+			      <li><i class="icon-headphones"></i></li>
+			      <li><i class="icon-volume-off"></i></li>
+			      <li><i class="icon-volume-up"></i></li>
+			      <li><i class="icon-qrcode"></i></li>
+			      <li><i class="icon-barcode"></i></li>
+			      <li><i class="icon-tag"></i></li>
+			      <li><i class="icon-tags"></i></li>
+			      <li><i class="icon-book"></i></li>
+			      <li><i class="icon-bookmark"></i></li>
+			      <li><i class="icon-print"></i></li>
+			      <li><i class="icon-camera"></i></li>
+			      <li><i class="icon-font"></i></li>
+			      <li><i class="icon-bold"></i></li>
+			      <li><i class="icon-italic"></i></li>
+			      <li><i class="icon-header"></i></li>
+			      <li><i class="icon-underline"></i></li>
+			      <li><i class="icon-strikethrough"></i></li>
+			      <li><i class="icon-eraser"></i></li>
+			      <li><i class="icon-align-justify"></i></li>
+			      <li><i class="icon-list"></i></li>
+			      <li><i class="icon-picture"></i></li>
+			      <li><i class="icon-pencil"></i></li>
+			      <li><i class="icon-map-marker"></i></li>
+			      <li><i class="icon-adjust"></i></li>
+			      <li><i class="icon-tint"></i></li>
+			      <li><i class="icon-edit"></i></li>
+			      <li><i class="icon-share"></i></li>
+			      <li><i class="icon-checked"></i></li>
+			      <li><i class="icon-arrows"></i></li>
+			      <li><i class="icon-step-backward"></i></li>
+			      <li><i class="icon-fast-backward"></i></li>
+			      <li><i class="icon-backward"></i></li>
+			      <li><i class="icon-play"></i></li>
+			      <li><i class="icon-pause"></i></li>
+			      <li><i class="icon-stop"></i></li>
+			      <li><i class="icon-forward"></i></li>
+			      <li><i class="icon-fast-forward"></i></li>
+			      <li><i class="icon-step-forward"></i></li>
+			      <li><i class="icon-eject"></i></li>
+			      <li><i class="icon-chevron-left"></i></li>
+			      <li><i class="icon-chevron-right"></i></li>
+			      <li><i class="icon-plus-sign"></i></li>
+			      <li><i class="icon-minus-sign"></i></li>
+			      <li><i class="icon-remove-sign"></i></li>
+			      <li><i class="icon-check-circle"></i></li>
+			      <li><i class="icon-question-sign"></i></li>
+			      <li><i class="icon-info-sign"></i></li>
+			      <li><i class="icon-remove-circle"></i></li>
+			      <li><i class="icon-check-circle-o"></i></li>
+			      <li><i class="icon-ban-circle"></i></li>
+			      <li><i class="icon-arrow-left"></i></li>
+			      <li><i class="icon-arrow-right"></i></li>
+			      <li><i class="icon-arrow-up"></i></li>
+			      <li><i class="icon-arrow-down"></i></li>
+			      <li><i class="icon-share-alt"></i></li>
+			      <li><i class="icon-resize-full"></i></li>
+			      <li><i class="icon-resize-small"></i></li>
+			      <li><i class="icon-plus"></i></li>
+			      <li><i class="icon-minus"></i></li>
+			      <li><i class="icon-asterisk"></i></li>
+			      <li><i class="icon-exclamation-sign"></i></li>
+			      <li><i class="icon-gift"></i></li>
+			      <li><i class="icon-leaf"></i></li>
+			      <li><i class="icon-eye-open"></i></li>
+			      <li><i class="icon-eye-close"></i></li>
+			      <li><i class="icon-warning-sign"></i></li>
+			      <li><i class="icon-plane"></i></li>
+			      <li><i class="icon-calendar"></i></li>
+			      <li><i class="icon-random"></i></li>
+			      <li><i class="icon-comment"></i></li>
+			      <li><i class="icon-chevron-up"></i></li>
+			      <li><i class="icon-chevron-down"></i></li>
+			      <li><i class="icon-shopping-cart"></i></li>
+			      <li><i class="icon-folder-close"></i></li>
+			      <li><i class="icon-folder-open"></i></li>
+			      <li><i class="icon-resize-v"></i></li>
+			      <li><i class="icon-resize-h"></i></li>
+			      <li><i class="icon-bar-chart-alt"></i></li>
+			      <li><i class="icon-camera-retro"></i></li>
+			      <li><i class="icon-key"></i></li>
+			      <li><i class="icon-cogs"></i></li>
+			      <li><i class="icon-comments"></i></li>
+			      <li><i class="icon-thumbs-o-up"></i></li>
+			      <li><i class="icon-thumbs-o-down"></i></li>
+			      <li><i class="icon-star-half"></i></li>
+			      <li><i class="icon-heart-empty"></i></li>
+			      <li><i class="icon-signout"></i></li>
+			      <li><i class="icon-pushpin"></i></li>
+			      <li><i class="icon-external-link"></i></li>
+			      <li><i class="icon-signin"></i></li>
+			      <li><i class="icon-trophy"></i></li>
+			      <li><i class="icon-upload-alt"></i></li>
+			      <li><i class="icon-lemon"></i></li>
+			      <li><i class="icon-phone"></i></li>
+			      <li><i class="icon-check-empty"></i></li>
+			      <li><i class="icon-bookmark-empty"></i></li>
+			      <li><i class="icon-phone-sign"></i></li>
+			      <li><i class="icon-credit"></i></li>
+			      <li><i class="icon-rss"></i></li>
+			      <li><i class="icon-hdd"></i></li>
+			      <li><i class="icon-bullhorn"></i></li>
+			      <li><i class="icon-bell"></i></li>
+			      <li><i class="icon-certificate"></i></li>
+			      <li><i class="icon-hand-right"></i></li>
+			      <li><i class="icon-hand-left"></i></li>
+			      <li><i class="icon-hand-up"></i></li>
+			      <li><i class="icon-hand-down"></i></li>
+			      <li><i class="icon-circle-arrow-left"></i></li>
+			      <li><i class="icon-circle-arrow-right"></i></li>
+			      <li><i class="icon-circle-arrow-up"></i></li>
+			      <li><i class="icon-circle-arrow-down"></i></li>
+			      <li><i class="icon-globe"></i></li>
+			      <li><i class="icon-wrench"></i></li>
+			      <li><i class="icon-tasks"></i></li>
+			      <li><i class="icon-filter"></i></li>
+			      <li><i class="icon-group"></i></li>
+			      <li><i class="icon-link"></i></li>
+			      <li><i class="icon-cloud"></i></li>
+			      <li><i class="icon-beaker"></i></li>
+			      <li><i class="icon-cut"></i></li>
+			      <li><i class="icon-copy"></i></li>
+			      <li><i class="icon-paper-clip"></i></li>
+			      <li><i class="icon-save"></i>></li>
+			      <li><i class="icon-sign-blank"></i></li>
+			      <li><i class="icon-bars"></i></li>
+			      <li><i class="icon-list-ul"></i></li>
+			      <li><i class="icon-list-ol"></i></li>
+			      <li><i class="icon-table"></i></li>
+			      <li><i class="icon-magic"></i></li>
+			      <li><i class="icon-caret-down"></i></li>
+			      <li><i class="icon-caret-up"></i></li>
+			      <li><i class="icon-caret-left"></i></li>
+			      <li><i class="icon-caret-right"></i></li>
+			      <li><i class="icon-columns"></i></li>
+			      <li><i class="icon-sort"></i></li>
+			      <li><i class="icon-sort-down"></i></li>
+			      <li><i class="icon-sort-up"></i></li>
+			      <li><i class="icon-envelope-alt"></i></li>
+			      <li><i class="icon-undo"></i></li>
+			      <li><i class="icon-dashboard"></i></li>
+			      <li><i class="icon-comment-alt"></i></li>
+			      <li><i class="icon-comments-alt"></i></li>
+			      <li><i class="icon-bolt"></i></li>
+			      <li><i class="icon-sitemap"></i></li>
+			      <li><i class="icon-umbrella"></i></li>
+			      <li><i class="icon-paste"></i></li>
+			      <li><i class="icon-lightbulb"></i></li>
+			      <li><i class="icon-exchange"></i></li>
+			      <li><i class="icon-cloud-download"></i></li>
+			      <li><i class="icon-cloud-upload"></i></li>
+			      <li><i class="icon-bell-alt"></i></li>
+			      <li><i class="icon-coffee"></i></li>
+			      <li><i class="icon-file-text-o"></i></li>
+			      <li><i class="icon-building"></i></li>
+			      <li><i class="icon-double-angle-left"></i></li>
+			      <li><i class="icon-double-angle-right"></i></li>
+			      <li><i class="icon-double-angle-up"></i></li>
+			      <li><i class="icon-double-angle-down"></i></li>
+			      <li><i class="icon-angle-left"></i></li>
+			      <li><i class="icon-angle-right"></i></li>
+			      <li><i class="icon-angle-up"></i></li>
+			      <li><i class="icon-angle-down"></i> </li>
+			      <li><i class="icon-desktop"></i></li>
+			      <li><i class="icon-laptop"></i></li>
+			      <li><i class="icon-tablet"></i></li>
+			      <li><i class="icon-mobile"></i></li>
+			      <li><i class="icon-circle-blank"></i></li>
+			      <li><i class="icon-quote-left"></i></li>
+			      <li><i class="icon-quote-right"></i> </li>
+			      <li><i class="icon-spinner"></i></li>
+			      <li><i class="icon-circle"></i> </li>
+			      <li><i class="icon-reply"></i> </li>
+			      <li><i class="icon-folder-close-alt"></i> </li>
+			      <li><i class="icon-folder-open-alt"></i></li>
+			      <li><i class="icon-expand-alt"></i></li>
+			      <li><i class="icon-collapse-alt"></i> </li>
+			      <li><i class="icon-smile"></i></li>
+			      <li><i class="icon-frown"></i></li>
+			      <li><i class="icon-meh"></i></li>
+			      <li><i class="icon-gamepad"></i></li>
+			      <li><i class="icon-keyboard"></i></li>
+			      <li><i class="icon-flag-alt"></i></li>
+			      <li><i class="icon-flag-checkered"></i></li>
+			      <li><i class="icon-terminal"></i></li>
+			      <li><i class="icon-code"></i> </li>
+			      <li><i class="icon-reply-all"></i> </li>
+			      <li><i class="icon-star-half-full"></i> </li>
+			      <li><i class="icon-location-arrow"></i> </li>
+			      <li><i class="icon-crop"></i></li>
+			      <li><i class="icon-code-fork"></i></li>
+			      <li><i class="icon-unlink"></i></li>
+			      <li><i class="icon-question"></i></li>
+			      <li><i class="icon-info"></i></li>
+			      <li><i class="icon-shield"></i></li>
+			      <li><i class="icon-calendar-empty"></i></li>
+			      <li><i class="icon-rocket"></i></li>
+			      <li><i class="icon-chevron-sign-left"></i></li>
+			      <li><i class="icon-chevron-sign-right"></i></li>
+			      <li><i class="icon-chevron-sign-up"></i></li>
+			      <li><i class="icon-chevron-sign-down"></i></li>
+			      <li><i class="icon-html5"></i></li>
+			      <li><i class="icon-anchor"></i></li>
+			      <li><i class="icon-unlock-alt"></i> </li>
+			      <li><i class="icon-bullseye"></i></li>
+			      <li><i class="icon-ellipsis-h"></i></li>
+			      <li><i class="icon-ellipsis-v"></i></li>
+			      <li><i class="icon-rss-sign"></i></li>
+			      <li><i class="icon-play-sign"></i></li>
+			      <li><i class="icon-minus-sign-alt"></i></li>
+			      <li><i class="icon-check-minus"></i></li>
+			      <li><i class="icon-level-up"></i> </li>
+			      <li><i class="icon-level-down"></i> </li>
+			      <li><i class="icon-check-sign"></i> </li>
+			      <li><i class="icon-edit-sign"></i></li>
+			      <li><i class="icon-external-link-sign"></i></li>
+			      <li><i class="icon-share-sign"></i></li>
+			      <li><i class="icon-compass"></i></li>
+			      <li><i class="icon-collapse"></i></li>
+			      <li><i class="icon-collapse-top"></i></li>
+			      <li><i class="icon-expand"></i></li>
+			      <li><i class="icon-dollar"></i></li>
+			      <li><i class="icon-yen"></i></li>
+			      <li><i class="icon-file"></i></li>
+			      <li><i class="icon-file-text"></i></li>
+			      <li><i class="icon-sort-by-alphabet"></i></li>
+			      <li><i class="icon-sort-by-alphabet-alt"></i></li>
+			      <li><i class="icon-sort-by-attributes"></i></li>
+			      <li><i class="icon-sort-by-attributes-alt"></i></li>
+			      <li><i class="icon-sort-by-order"></i></li>
+			      <li><i class="icon-sort-by-order-alt"></i></li>
+			      <li><i class="icon-thumbs-up"></i></li>
+			      <li><i class="icon-thumbs-down"></i></li>
+			      <li><i class="icon-long-arrow-down"></i></li>
+			      <li><i class="icon-long-arrow-up"></i></li>
+			      <li><i class="icon-long-arrow-left"></i></li>
+			      <li><i class="icon-long-arrow-right"></i></li>
+			      <li><i class="icon-apple"></i></li>
+			      <li><i class="icon-windows"></i></li>
+			      <li><i class="icon-android"></i></li>
+			      <li><i class="icon-linux"></i></li>
+			      <li><i class="icon-sun"></i></li>
+			      <li><i class="icon-moon"></i></li>
+			      <li><i class="icon-archive"></i></li>
+			      <li><i class="icon-bug"></i></li>
+			      <li><i class="icon-zhifubao"></i></li>
+			      <li><i class="icon-zhifubao-square"></i></li>
+			      <li><i class="icon-taobao"></i></li>
+			      <li><i class="icon-weibo"></i></li>
+			      <li><i class="icon-renren"></i></li>
+			      <li><i class="icon-chrome"></i></li>
+			      <li><i class="icon-firefox"></i></li>
+			      <li><i class="icon-ie"></i></li>
+			      <li><i class="icon-opera"></i></li>
+			      <li><i class="icon-safari"></i></li>
+			      <li><i class="icon-node"></i></li>
+			      <li><i class="icon-layout"></i></li>
+			      <li><i class="icon-usecase"></i></li>
+			      <li><i class="icon-stack"></i></li>
+			      <li><i class="icon-branch"></i></li>
+			      <li><i class="icon-chat"></i></li>
+			      <li><i class="icon-chat-line"></i></li>
+			      <li><i class="icon-chat-dot"></i></li>
+			      <li><i class="icon-cube"></i></li>
+			      <li><i class="icon-database"></i></li>
+			      <li><i class="icon-align-left"></i></li>
+			    </ul>
+			  </div>
+
+			  <!--图标容器-end-->
+			</div>
+		</section>
+	</main>
+	<footer class="footer">
+		﻿<div class="footer__inner col-sm-6">
+			<span class="l-inner--bottom">@2016 © 深圳市前海圆舟网络科技股份有限公司.</span>
+		</div>
+		<div class="footer__tools col-sm-6">
+			<ul class="button-group pull-right tools--btn">
+				<li>
+					<button type="button" class="btn tool--btn"><i class="icon icon-angle-up"></i></button>
+				</li>
+			</ul> 
+		</div>
+
+	</footer>
+</section>
+<script src="/public/object-fit-polyfill.js"></script>
+<script src="/public/tokenizer.js"></script>
+<script src="/public/parser.js"></script>
+<script src="/public/vminpoly.js"></script>
+<script src="/public/jquery.min.js"></script>
+<script src="/public/zui.min.js"></script>
+<script src="/public/zui.chart.min.js"></script>
+<script src="/js/index.js"></script>
+<script src="/js/sys-resource-manage.js"></script>
+</body>
+</html>

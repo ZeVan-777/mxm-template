@@ -1098,9 +1098,9 @@ gulp-file-include@^1.1.0:
     gulp-util "^3.0.8"
     through2 "^2.0.3"
 
-gulp-foreach@^0.1.0:
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/gulp-foreach/-/gulp-foreach-0.1.0.tgz#2547abfd1a1b75f569b54194190ef1c0b0289538"
+gulp-flatmap@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/gulp-flatmap/-/gulp-flatmap-1.0.0.tgz#e634e03cffb263aebacfdc22dd8ce2f3d76ffe97"
   dependencies:
     gulp-util "~2.2.14"
     through2 "~0.6.3"

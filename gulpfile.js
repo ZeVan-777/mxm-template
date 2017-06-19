@@ -10,7 +10,8 @@ const gulp = require('gulp'),
 const	browserSync = require('browser-sync').create(),
 			reload = browserSync.reload;
 
-const lessDir = path.join(__dirname, 'src/less'),
+const srcDir = path.join(__dirname, 'src'),
+			lessDir = path.join(__dirname, 'src/less'),
 			tplDir = path.join(__dirname, 'src/template'),
 			cssDir = path.join(__dirname, 'src/css'),
 			publicDir = path.join(__dirname, 'src/public');
@@ -66,7 +67,7 @@ gulp.task('bower', () => {
 	  .pipe(gulp.dest(publicDir));
 });
 
-gulp.task('serve', ['less', 'html', 'bower'], () => {		
+gulp.task('serve', ['dev'], () => {		
 	browserSync.init({
 		server: {
 			baseDir: 'src'
@@ -75,6 +76,22 @@ gulp.task('serve', ['less', 'html', 'bower'], () => {
 
 	gulp.watch(lessPath, ['less']);	
 	gulp.watch(tplPath, ['html']);
+});
+
+gulp.task('dev', ['less', 'html', 'bower']);
+
+const docList = [
+	'*.html',
+	'public/**',
+	'js/*.js',
+	'css/*.css',
+	'images/*.*'
+];
+const docDist = path.join(__dirname, 'docs');
+gulp.task('build', ['dev'], () => {
+	var globList = docList.map(glob => path.join(srcDir, glob));
+	gulp.src(globList, {base: srcDir})
+		.pipe(gulp.dest(docDist));
 });
 
 gulp.task('default', ['serve']);
