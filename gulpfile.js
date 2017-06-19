@@ -4,7 +4,9 @@ const gulp = require('gulp'),
 			gulpFileInclude = require('gulp-file-include'),
 			gulpLess = require('gulp-less'),
 			gulpFlatmap = require('gulp-flatmap'),
-			gulpBatchReplace  = require('gulp-batch-replace');
+			gulpBatchReplace  = require('gulp-batch-replace'),
+			gulpInject = require('gulp-inject'),
+			gulpAutoprefixer = require('gulp-autoprefixer');			
 			// ToDo: bundle js/css link in html
 			// gulpHtmlReplace = require('gulp-html-replace');
 const	browserSync = require('browser-sync').create(),
@@ -13,6 +15,7 @@ const	browserSync = require('browser-sync').create(),
 const srcDir = path.join(__dirname, 'src'),
 			lessDir = path.join(__dirname, 'src/less'),
 			tplDir = path.join(__dirname, 'src/template'),
+			jsDir = path.join(__dirname, 'src/js'),
 			cssDir = path.join(__dirname, 'src/css'),
 			publicDir = path.join(__dirname, 'src/public');
 
@@ -22,6 +25,12 @@ const lessPath = path.join(lessDir, '*.less'),
 gulp.task('less', () => {	
 	return gulp.src(lessPath)
 	  .pipe(gulpLess())
+	  .pipe(gulpAutoprefixer({
+	  	browsers: [
+	  		'last 4 versions',
+	  		'Android >= 4.0'
+	  	]
+	  }))
 	  .pipe(gulp.dest(cssDir))
 	  .pipe(reload({
 	  	stream: true
@@ -29,21 +38,55 @@ gulp.task('less', () => {
 });
 
 gulp.task('html', () => {
-	return gulp.src(path.join(tplDir, 'content/*.html'), {read: false})	// make processing faster
+	return gulp.src(path.join(tplDir, 'content/*.html'))
 		.pipe(gulpFlatmap(function(stream, file) {
-			var filename = path.basename(file.path);
+			var fileName = path.basename(file.path);
+			var jsName = fileName.replace('.html', '.js');
+			var cssName = fileName.replace('.html', '.css');
+			var layoutPath = path.join(tplDir, 'layout.html');			
+			// Stream that default js&css used by content html files
+			var defStream = gulp.src([`${jsDir}/${jsName}`, `${cssDir}/${cssName}`]);
+				
+			var regCss = /<link\s.*href=([\"\'])(.*\.css)\1[^>]*>/ig;
+			var regJs = /<script\s.*src=([\"\'])(.*\.js)\1[^>]*><\/script>/ig;
+			var ref = [];
+			var refList = [];
+			var content = file.contents.toString('utf8');
+			var matchedCss = content.match(regCss);
+			var matchedJs = content.match(regJs);
+			if(matchedCss) {
+				matchedCss.forEach((tag, i) => {
+					ref = tag.replace(regCss, '$2');
+					refList.push(ref);
+				});
+			}
+			if(matchedJs) {
+				matchedJs.forEach((tag, i) => {
+					ref = tag.replace(regJs, '$2');
+					refList.push(ref);
+				});
+			}
+
+			// js&css dependent'stream that was delared in html	
+			var domStream = gulp.src(refList.map(path => path.replace('./public/', './src/public/')), {base: './src'});
 			var replaceThese = [
-				['{{filename}}', filename]
-			];
-			return gulp.src(path.join(tplDir, 'layout.html'))
+				['{{fileName}}', fileName],
+				['/src/', './']
+			]
+
+			var layoutStream = gulp.src(layoutPath)
+				.pipe(gulpRename(fileName))
+				.pipe(gulpInject(domStream, {starttag: '<!-- inject:public:{{ext}} -->'}))		
+				.pipe(gulpInject(defStream))
 				.pipe(gulpBatchReplace(replaceThese))
 				.pipe(gulpFileInclude({
 					prefix: '@@',
 					basepath: '@file',	// for resolving path passed to @@include method
 					indent: true
-				}))
-				.pipe(gulpRename(filename))
-				.pipe(gulp.dest('src'))
+				}))				
+				.pipe(gulp.dest('src'));
+
+			return layoutStream;
 		}))
 		.pipe(reload({
 			stream: true

@@ -2,17 +2,20 @@
 <html lang="zh-cn">
 <head>
 	<meta charset="UTF-8">
-	<title>Document</title>
-	<!--[if lt IE 9]>
-  	<script src="/public/html5shiv.min.js"></script>
-	<![endif]-->
-	<link rel="stylesheet" href="/public/normalize.css">
-	<link rel="stylesheet" href="/public/css/zui.css">
-	<link rel="stylesheet" href="/css/header.css">
-	<link rel="stylesheet" href="/css/sidebar.css">
-	<link rel="stylesheet" href="/css/footer.css">
-	<link rel="stylesheet" href="/css/index.css">
-	<link rel="stylesheet" href="/css/sys-resource-manage.css">
+	<title>前海圆舟 | xSimple移动管理平台</title>
+	<link rel="stylesheet" href="./public/normalize.css">
+	<link rel="stylesheet" href="./public/css/zui.css">
+	<link rel="stylesheet" href="./public/zui.datatable.css" >
+	<link rel="stylesheet" href="./css/header.css">
+	<link rel="stylesheet" href="./css/sidebar.css">
+	<link rel="stylesheet" href="./css/footer.css">
+
+	<!-- inject:public:css -->
+	<!-- endinject -->
+
+	<!-- inject:css -->
+	<!-- partial default style -->
+	<!-- endinject -->
 	<style>
 		html, body {
 			width: 100%;
@@ -28,21 +31,30 @@
 	<main class="l-main__content">
 		@@include('partial/sidebar.html')
 		<section class="l-page content__item pull-left">
-			@@include('content/{{filename}}')
+			@@include('content/{{fileName}}')
 		</section>
 	</main>
 	<footer class="footer">
 		@@include('partial/footer.html')
 	</footer>
 </section>
-<script src="/public/object-fit-polyfill.js"></script>
-<script src="/public/tokenizer.js"></script>
-<script src="/public/parser.js"></script>
-<script src="/public/vminpoly.js"></script>
-<script src="/public/jquery.min.js"></script>
-<script src="/public/zui.min.js"></script>
-<script src="/public/zui.chart.min.js"></script>
-<script src="/js/index.js"></script>
-<script src="/js/sys-resource-manage.js"></script>
+<!--[if lt IE 9]>
+  <script src="./public/html5shiv.min.js"></script>
+<![endif]-->
+<script src="./public/object-fit-polyfill.js"></script>
+<script src="./public/tokenizer.js"></script>
+<script src="./public/parser.js"></script>
+<script src="./public/vminpoly.js"></script>
+<script src="./public/jquery.min.js"></script>
+<script src="./public/zui.min.js"></script>
+<script src="./public/zui.chart.min.js"></script>
+<script src="./public/zui.datatable.js"></script>
+<!-- inject:public:js -->
+<!-- inject public script before customized -->
+<!-- endinject -->
+
+<!-- inject:js -->
+<!-- partial default script writed by Coraclers-->
+<!-- endinject -->
 </body>
 </html>

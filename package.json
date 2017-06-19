@@ -1,4 +1,4 @@
-{
+﻿{
   "name": "mxm-template",
   "version": "0.0.1",
   "description": "static template for mxm website which is based on zui",
@@ -20,9 +20,11 @@
   "devDependencies": {
     "browser-sync": "^2.18.12",
     "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.0.0",
     "gulp-batch-replace": "0.0.0",
     "gulp-file-include": "^1.1.0",
     "gulp-flatmap": "^1.0.0",
+    "gulp-inject": "^4.2.0",
     "gulp-less": "^3.3.0",
     "gulp-rename": "^1.2.2"
   }

@@ -1,4 +1,6 @@
-﻿.l-main--scrollable {
+﻿@import (reference) '_mixin';
+
+.l-main--scrollable {
 	padding-top: 46px;
 	overflow-y: scroll;
 }
@@ -43,5 +45,18 @@
 
 	.dropdown-hover {
 		display: inline-block;	
+	}
+	.dropdown-menu {
+		top: 108%;
+		&::before {
+			content: '';
+			position: absolute;
+			bottom: 100%;
+			right: 10px;
+
+      .o-triangle();
+			.o-triangle--top();
+
+		}
 	}
 }
