@@ -18,7 +18,8 @@
   height: 100%;
 }
 .header .logo__image {
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
   height: 100%;
   width: 100%;
 }
@@ -37,4 +38,20 @@
 }
 .header .dropdown-hover {
   display: inline-block;
+}
+.header .dropdown-menu {
+  top: 108%;
+}
+.header .dropdown-menu::before {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  right: 10px;
+  display: block;
+  width: 0;
+  height: 0;
+  border: solid 9px #fff;
+  border-top-color: transparent;
+  border-left-color: transparent;
+  border-right-color: transparent;
 }

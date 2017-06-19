@@ -1,0 +1,78 @@
+.page-content-wrapper {
+  padding: 25px 20px 10px;
+  background-color: #fff;
+}
+.home-header {
+  padding: 0px;
+  font-size: 30px;
+  letter-spacing: -1px;
+  display: block;
+  color: #000;
+  margin: 0px 0px 15px 0px;
+  font-weight: 300;
+  font-family: "Open Sans", sans-serif;
+}
+.small-text {
+  margin-left: 5px;
+  font-size: 14px;
+  font-weight: 300;
+  color: #145ccd;
+}
+.breadcrumb {
+  background-color: #eee;
+}
+.check-role,
+.check-user {
+  height: 120px;
+  background-color: #35aa47;
+}
+.check-user {
+  background-color: #ffb848;
+}
+.check-des {
+  text-align: center;
+  color: #fff;
+  font-size: 28px;
+  height: 100px;
+  line-height: 100px;
+}
+.check-role-link,
+.checl-user-link {
+  display: block;
+  height: 20px;
+  color: #fff;
+  text-align: center;
+  cursor: pointer;
+  background-color: #309a41;
+}
+.checl-user-link {
+  background-color: #ffb034;
+}
+.check-role-link:hover,
+.checl-user-link:hover {
+  text-decoration: none;
+}
+.app-download-box {
+  margin: 20px 0;
+}
+.download-text {
+  color: #000;
+  font-size: 24px;
+  font-weight: bold;
+}
+.device-icon {
+  display: inline-block;
+  width: 60px;
+  height: 30px;
+  border-radius: 30px;
+  background-color: #309a41;
+  color: #fff;
+  text-align: center;
+  line-height: 30px;
+  cursor: pointer;
+  margin-left: 10px;
+  margin-bottom: 2px;
+}
+.device-icon-ios {
+  background-color: #ea644a;
+}

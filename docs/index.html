@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="UTF-8">
+	<title>前海圆舟 | xSimple移动管理平台</title>
+	<link rel="stylesheet" href="./public/normalize.css">
+	<link rel="stylesheet" href="./public/css/zui.css">
+	<link rel="stylesheet" href="./public/zui.datatable.css" >
+	<link rel="stylesheet" href="./css/header.css">
+	<link rel="stylesheet" href="./css/sidebar.css">
+	<link rel="stylesheet" href="./css/footer.css">
+
+	<!-- inject:public:css -->
+	<link rel="stylesheet" href="./public/normalize.css">
+	<!-- endinject -->
+
+	<!-- inject:css -->
+	<link rel="stylesheet" href="./css/index.css">
+	<!-- endinject -->
+	<style>
+		html, body {
+			width: 100%;
+			height: 100%;
+		}
+	</style>
+</head>
+<body>
+<header class="header container-fluid">
+	﻿<div class="header__logo col-sm-2 pull-left">
+		<img src="./images/logo.png" alt="圆舟xSimple" class="logo__image" data-object-fit="contain">
+	</div>
+	<div class="header__menu col-sm-2 pull-right">
+		<div class="dropdown dropdown-hover pull-right">
+			<div class="header__profile" data-toggle="dropdown">
+				<img src="./images/avatar.jpg" alt="头像" class="img-circle profile__avatar">
+				<span class="profile__username">管理员</span>
+				<i class="profile__icon icon-chevron-down"></i>
+			</div>
+			<ul class="dropdown-menu">
+				<li>
+					<a href="javascript:void(0)" class="menu__link"><i class="menu__icon icon-lock"></i>修改密码</a>
+				</li>
+				<li>
+					<a href="javascript:void(0)"><i class="menu__icon icon-signout"></i>我要退出</a>
+				</li>
+			</ul>	
+		</div>
+	</div>
+</header>	
+<section class="l-main l-main--scrollable container-fluid">
+	<main class="l-main__content">
+		﻿<nav class="aside l-aside content__item menu pull-left">
+			<button type="button" class="btn btn--menu pull-right"><i class="icon icon-bars"></i></button>
+			<ul class="nav" id="nav">		
+		    <li class="nav__level0"><a href="javascript:;"><i class="icon icon-home"></i>首页</a></li>
+		    <li class="nav__level0"><a href="javascript:;"><i class="icon icon-cogs"></i>系统设置</a></li>
+		    <li class="nav__level0 nav-parent">
+		      <a href="javascript:;"><i class="icon icon-time"></i> Time</a>
+		      <ul class="nav">
+		        <li><a href="javascript:;">Today</a></li>
+		        <li><a href="javascript:;">Tomarrow</a></li>
+		        <li><a href="javascript:;">Yestorday</a></li>
+		        <li><a href="javascript:;">This Week</a></li>
+		      </ul>
+		    </li>
+		    <li class="nav__level0"><a href="javascript:;"><i class="icon icon-trash"></i> Trash</a></li>
+		    <li class="nav__level0"><a href="javascript:;"><i class="icon icon-list-ul"></i> All</a></li>
+		    <li class="nav__level0 active show nav-parent">
+		      <a href="javascript:;"><i class="icon icon-tasks"></i> Status</a>
+		      <ul class="nav">
+		        <li><a href="javascript:;"><i class="icon icon-circle-blank"></i> Ready</a></li>
+		        <li class="active"><a href="javascript:;"><i class="icon icon-play-sign"></i> Ongoing</a></li>
+		        <li><a href="javascript:;"><i class="icon icon-ok-sign"></i> Completed</a></li>
+		      </ul>
+		    </li>
+		  </ul>
+		</nav>
+		<section class="l-page content__item pull-left">
+			<div class="page-content-wrapper">
+			  <div class="row">
+			    <div class="col-md-12">
+			      <header class="home-header">
+			        xSimple<span class="small-text">移动管理平台</span>
+			      </header>
+			      <ol class="breadcrumb">
+			        <li><a href="your/url/"><i class="icon icon-home"></i>主页</a></li>
+			      </ol>
+			    </div>
+			  </div>
+			  <div class="row">
+			    <div class="col-md-6 col-sm-6 col-lg-6">
+			      <div class="check-role">
+			        <div class="check-role-des check-des">
+			          17个角色
+			        </div>
+			        <a href="" class="check-role-link">
+			          查看角色 <i class="icon icon-hand-right"></i>
+			        </a>
+			      </div>
+			    </div>
+			    <div class="col-md-6 col-sm-6 col-lg-6">
+			      <div class="check-user">
+			        <div class="check-user-des check-des">
+			          64个用户
+			        </div>
+			        <a href="" class="checl-user-link">
+			          查看用户 <i class="icon icon-hand-right"></i>
+			        </a>
+			      </div>
+			    </div>
+			  </div>
+			  <div class="row  app-download-box">
+			    <div class="col-md-12 col-sm-12 col-lg-12 clearfix">
+			      <i class="icon icon-bar-chart-alt"></i><span class="download-text">应用下载量</span>
+			      <span class="device-icon device-icon-ios pull-right">ios</span>
+			      <span class="device-icon device-icon-android pull-right">android</span>
+			    </div>
+			  </div>
+			  <div class="row">
+			    <div class="col-md-12 col-sm-12 col-lg-12">
+			      <div class="home-chart-contain">
+			        <canvas id="home-chart" class="home-chart"></canvas>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+			<!-- <link rel="stylesheet" href="./public/normalize.css"> -->
+			<!-- <script src="./public/hehe.js"></script> -->
+			<!-- <script src="./public/haha.js"></script> -->
+
+		</section>
+	</main>
+	<footer class="footer">
+		﻿<div class="footer__inner col-sm-6">
+			<span class="l-inner--bottom">@2016 © 深圳市前海圆舟网络科技股份有限公司.</span>
+		</div>
+		<div class="footer__tools col-sm-6">
+			<ul class="button-group pull-right tools--btn">
+				<li>
+					<button type="button" class="btn tool--btn"><i class="icon icon-angle-up"></i></button>
+				</li>
+			</ul> 
+		</div>
+
+	</footer>
+</section>
+<!--[if lt IE 9]>
+  <script src="./public/html5shiv.min.js"></script>
+<![endif]-->
+<script src="./public/object-fit-polyfill.js"></script>
+<script src="./public/tokenizer.js"></script>
+<script src="./public/parser.js"></script>
+<script src="./public/vminpoly.js"></script>
+<script src="./public/jquery.min.js"></script>
+<script src="./public/zui.min.js"></script>
+<script src="./public/zui.chart.min.js"></script>
+<script src="./public/zui.datatable.js"></script>
+<!-- inject:public:js -->
+<!-- inject public script before customized -->
+<!-- endinject -->
+
+<!-- inject:js -->
+<script src="./js/index.js"></script>
+<!-- endinject -->
+</body>
+</html>

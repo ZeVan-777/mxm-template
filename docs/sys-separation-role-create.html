@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="UTF-8">
+	<title>前海圆舟 | xSimple移动管理平台</title>
+	<link rel="stylesheet" href="./public/normalize.css">
+	<link rel="stylesheet" href="./public/css/zui.css">
+	<link rel="stylesheet" href="./public/zui.datatable.css" >
+	<link rel="stylesheet" href="./css/header.css">
+	<link rel="stylesheet" href="./css/sidebar.css">
+	<link rel="stylesheet" href="./css/footer.css">
+
+	<!-- inject:public:css -->
+	<!-- endinject -->
+
+	<!-- inject:css -->
+	<link rel="stylesheet" href="./css/sys-separation-role-create.css">
+	<!-- endinject -->
+	<style>
+		html, body {
+			width: 100%;
+			height: 100%;
+		}
+	</style>
+</head>
+<body>
+<header class="header container-fluid">
+	﻿<div class="header__logo col-sm-2 pull-left">
+		<img src="./images/logo.png" alt="圆舟xSimple" class="logo__image" data-object-fit="contain">
+	</div>
+	<div class="header__menu col-sm-2 pull-right">
+		<div class="dropdown dropdown-hover pull-right">
+			<div class="header__profile" data-toggle="dropdown">
+				<img src="./images/avatar.jpg" alt="头像" class="img-circle profile__avatar">
+				<span class="profile__username">管理员</span>
+				<i class="profile__icon icon-chevron-down"></i>
+			</div>
+			<ul class="dropdown-menu">
+				<li>
+					<a href="javascript:void(0)" class="menu__link"><i class="menu__icon icon-lock"></i>修改密码</a>
+				</li>
+				<li>
+					<a href="javascript:void(0)"><i class="menu__icon icon-signout"></i>我要退出</a>
+				</li>
+			</ul>	
+		</div>
+	</div>
+</header>	
+<section class="l-main l-main--scrollable container-fluid">
+	<main class="l-main__content">
+		﻿<nav class="aside l-aside content__item menu pull-left">
+			<button type="button" class="btn btn--menu pull-right"><i class="icon icon-bars"></i></button>
+			<ul class="nav" id="nav">		
+		    <li class="nav__level0"><a href="javascript:;"><i class="icon icon-home"></i>首页</a></li>
+		    <li class="nav__level0"><a href="javascript:;"><i class="icon icon-cogs"></i>系统设置</a></li>
+		    <li class="nav__level0 nav-parent">
+		      <a href="javascript:;"><i class="icon icon-time"></i> Time</a>
+		      <ul class="nav">
+		        <li><a href="javascript:;">Today</a></li>
+		        <li><a href="javascript:;">Tomarrow</a></li>
+		        <li><a href="javascript:;">Yestorday</a></li>
+		        <li><a href="javascript:;">This Week</a></li>
+		      </ul>
+		    </li>
+		    <li class="nav__level0"><a href="javascript:;"><i class="icon icon-trash"></i> Trash</a></li>
+		    <li class="nav__level0"><a href="javascript:;"><i class="icon icon-list-ul"></i> All</a></li>
+		    <li class="nav__level0 active show nav-parent">
+		      <a href="javascript:;"><i class="icon icon-tasks"></i> Status</a>
+		      <ul class="nav">
+		        <li><a href="javascript:;"><i class="icon icon-circle-blank"></i> Ready</a></li>
+		        <li class="active"><a href="javascript:;"><i class="icon icon-play-sign"></i> Ongoing</a></li>
+		        <li><a href="javascript:;"><i class="icon icon-ok-sign"></i> Completed</a></li>
+		      </ul>
+		    </li>
+		  </ul>
+		</nav>
+		<section class="l-page content__item pull-left">
+			<div class="page-content-wrapper">
+			  <div class="row">
+			    <div class="col-md-12 col-lg-12 col-sm-12">
+			      <ol class="breadcrumb">
+			        <li><a href="your/url/"><i class="icon icon-cog"></i>系统设置</a></li>
+			        <li><a href="your/url/"><i class="icon icon-sitemap"></i>分权角色</a></li>
+			        <li><a href="your/url/"><i class="icon icon-list-ul"></i>新建分权角色</a></li>
+			      </ol>
+			    </div>
+			  </div>
+			  <div class="create-role-content">
+			    <div class="row">
+			      <div class="col-md-12 col-lg-12 col-sm-12">
+			        <header class="create-role-head">
+			          新建分权角色
+			        </header>
+			      </div>
+			    </div>
+			    <div class="row tab-content-box">
+			      <div class="col-lg-12 col-md-12 col-sm-12">
+			        <ul class="nav nav-tabs">
+			          <li class="active"><a data-tab href="#tabContent1">角色信息</a></li>
+			          <li><a data-tab href="#tabContent2">功能权限</a></li>
+			        </ul>
+			        <div class="tab-content">
+			          <div class="tab-pane active" id="tabContent1">
+			            <div class="row">
+			              <div class="col-md-12 col-lg-12 col-sm-12">
+			                <div class="input-group">
+			                  <span class="input-group-addon">名称<i class="red-star">*</i></span>
+			                  <input type="text" class="form-control" placeholder="">
+			                </div>
+			              </div>
+			            </div>
+			            <div class="row">
+			              <div class="col-md-12 col-lg-12 col-sm-12">
+			                <div class="input-group">
+			                  <span class="input-group-addon">编码<i class="red-star">*</i></span>
+			                  <input type="text" class="form-control" placeholder="">
+			                </div>
+			              </div>
+			            </div>
+			            <div class="row">
+			              <div class="col-md-12 col-lg-12 col-sm-12">
+			                <div class="input-group">
+			                  <span class="input-group-addon">状态<i class="red-star">*</i></span>
+			                  <select class="form-control select-use">
+			                    <option value="use">启用</option>
+			                    <option value="no-use">禁用</option>
+			                  </select>
+			                </div>
+			              </div>
+			            </div>
+			            <div class="row">
+			              <div class="col-md-12 col-lg-12 col-sm-12">
+			                <div class="input-group">
+			                  <span class="input-group-addon">说明</span>
+			                  <textarea  class="form-control" placeholder=""></textarea>
+			                </div>
+			              </div>
+			            </div>
+			            <div class="row">
+			              <div class="col-md-12 col-lg-12 col-sm-12">
+			                <div class="input-group">
+			                  <span class="input-group-addon">所属机构<i class="red-star">*</i></span>
+			                  <input type="text" class="form-control sys-institution" placeholder="选择所属机构" disabled>
+			                  <span class="input-group-btn">
+			                    <button class="btn btn-primary select-institution" type="button"
+			                            data-custom="#treeExamples"
+			                            data-toggle="modal"
+			                            >选择机构</button>
+			                  </span>
+			                </div>
+			              </div>
+			            </div>
+			            <div class="create-btn-groups">
+			              <div class="btn-box">
+			                <button type="button" class="btn btn-primary btn-save-create">保存</button>
+			                <button type="button" class="btn btn-cancle-create">取消</button>
+			              </div>
+			            </div>
+			          </div>
+			          <div class="tab-pane" id="tabContent2">
+			            <ul class="tree tree-lines actionTree" data-ride="tree">
+			              <li><input type="checkbox"><i class="icon icon-home"></i>主页</li>
+			              <li>
+			                <input type="checkbox"><i class="icon icon-cog"></i>系统设置
+			                <ul>
+			                  <li>
+			                    <input type="checkbox"><i class="icon-cubes"></i>资源管理
+			                  </li>
+			                  <li>
+			                    <input type="checkbox"><i class="icon-server"></i>组织管理
+			                  </li>
+			                  <li>
+			                    <input type="checkbox"><i class="icon-user"></i>员工管理
+			                  </li>
+			                  <li>
+			                    <input type="checkbox"><i class="icon-user"></i>用户管理
+			                  </li>
+			                  <li>
+			                    <input type="checkbox"><i class="icon-user"></i>角色管理
+			                  </li>
+			                  <li>
+			                    <input type="checkbox"><i class="icon-group"></i>团队管理
+			                  </li>
+			                  <li>
+			                    <input type="checkbox"><i class="icon-columns"></i>岗位管理
+			                  </li>
+			                  <li>
+			                    <input type="checkbox"><i class="icon-bars"></i>数据权限配置
+			                  </li>
+			                  <li>
+			                    <input type="checkbox"><i class="icon-bell"></i>定时任务管理
+			                  </li>
+			                  <li>
+			                    <input type="checkbox"><i class="icon-user"></i>分权角色
+			                  </li>
+			                  <li>
+			                    <input type="checkbox"><i class="icon-group"></i>用户分组
+			                  </li>
+			                </ul>
+			              </li>
+			              <li>
+			                <input type="checkbox"><i class="icon icon-shield"></i>第三方权限
+			                <ul>
+			                  <li>
+			                    <input type="checkbox"><i class="icon-window"></i>第三方系统
+			                  </li>
+			                  <li>
+			                    <input type="checkbox"><i class="icon-user"></i>第三方用户
+			                  </li>
+			                </ul>
+			              </li>
+			              <li>
+			                <input type="checkbox"><i class="icon icon-qrcode"></i>应用管理
+			                <ul>
+			                  <li>
+			                    <input type="checkbox"><i class="icon-sube-alt"></i>应用设置
+			                  </li>
+			                  <li>
+			                    <input type="checkbox"><i class="icon-file-word"></i>应用版本
+			                  </li>
+			                  <li>
+			                    <input type="checkbox"><i class="icon-file-pdf"></i>应用清单
+			                  </li>
+			                  <li>
+			                    <input type="checkbox"><i class="icon-check-board"></i>上架申请
+			                  </li>
+			                  <li>
+			                    <input type="checkbox"><i class="icon-inbox"></i>上架审批
+			                  </li>
+			                  <li>
+			                    <input type="checkbox"><i class="icon-sliders"></i>模块管理
+			                  </li>
+			                  <li>
+			                    <input type="checkbox"><i class="icon-user"></i>角色管理
+			                  </li>
+			                  <li>
+			                    <input type="checkbox"><i class="icon-star"></i>功能管理
+			                  </li>
+			                </ul>
+			              </li>
+			              <li>
+			                <input type="checkbox"><i class="icon icon-shopping-cart"></i>应用商店
+			                <ul>
+			                  <li>
+			                    <input type="checkbox"><i class="icon-bookmark"></i>应用分类
+			                  </li>
+			                  <li>
+			                    <input type="checkbox"><i class="icon-tags"></i>模块管理
+			                  </li>
+			                  <li>
+			                    <input type="checkbox"><i class="icon-list-alt"></i>布局管理
+			                  </li>
+			                  <li>
+			                    <input type="checkbox"><i class="icon-bars"></i>应用标签
+			                  </li>
+			                  <li>
+			                    <input type="checkbox"><i class="icon-list-ul"></i>应用清单
+			                  </li>
+			                  <li>
+			                    <input type="checkbox"><i class="icon-list-ol"></i>轻应用清单
+			                  </li>
+			                </ul>
+			              </li>
+
+			              <li>
+			                <input type="checkbox"><i class="icon icon-umbrella"></i>安全管理
+			                <ul>
+			                  <li>
+			                    <input type="checkbox"><i class="icon-file-word"></i>日志记录
+			                  </li>
+			                  <li>
+			                    <input type="checkbox"><i class="icon-star"></i>设备状态
+			                  </li>
+			                  <li>
+			                    <input type="checkbox"><i class="icon-th-large"></i>设备管理
+			                  </li>
+			                  <li>
+			                    <input type="checkbox"><i class="icon-file-excel"></i>证书管理
+			                  </li>
+			                  <li>
+			                    <input type="checkbox"><i class="icon-search"></i>消息查询
+			                  </li>
+			                </ul>
+			              </li>
+			              <li>
+			                <input type="checkbox"><i class="icon icon-sign-blank"></i>平台管理
+			                <ul>
+			                  <li>
+			                    <input type="checkbox"><i class="icon-file-code"></i>意见反馈
+			                  </li>
+			                  <li>
+			                    <input type="checkbox"><i class="icon-user"></i>客服管理
+			                  </li>
+			                </ul>
+			              </li>
+			              <li>
+			                <input type="checkbox"><i class="icon icon-level-down"></i>导入管理
+			                <ul>
+			                  <li>
+			                    <input type="checkbox"><i class="icon-file-o"></i>用户导入
+			                  </li>
+			                  <li>
+			                    <input type="checkbox"><i class="icon-building"></i>组织用户导入
+			                  </li>
+			                </ul>
+			              </li>
+			              <li>
+			                <input type="checkbox"><i class="icon icon-anchor"></i>数据字典管理
+			                <ul>
+			                  <li>
+			                    <input type="checkbox"><i class="icon-link"></i>数据字典
+			                  </li>
+			                </ul>
+			              </li>
+			              <li>
+			                <input type="checkbox"><i class="icon icon-list-ol"></i>群组管理
+			                <ul>
+			                  <li>
+			                    <input type="checkbox"><i class="icon-list-ul"></i>群组列表
+			                  </li>
+			                </ul>
+			              </li>
+			              <li>
+			                <input type="checkbox"><i class="icon icon-list-alt"></i>配置中心
+			                <ul>
+			                  <li>
+			                    <input type="checkbox"><i class="icon-bolt"></i>配置管理
+			                  </li>
+			                  <li>
+			                    <input type="checkbox"><i class="icon-smile"></i>表情包管理
+			                  </li>
+			                  <li>
+			                    <input type="checkbox"><i class="icon-sun"></i>配置中心
+			                  </li>
+			                </ul>
+			              </li>
+			              <li>
+			                <input type="checkbox"><i class="icon icon-file-word"></i>日志管理
+			                <ul>
+			                  <li>
+			                    <input type="checkbox"><i class="icon-file-o"></i>操作日志
+			                  </li>
+			                  <li>
+			                    <input type="checkbox"><i class="icon-file-word"></i>安全日志
+			                  </li>
+			                </ul>
+			              </li>
+			              <li>
+			                <input type="checkbox"><i class="icon icon-window"></i>BPM工作流引擎
+			                <ul>
+			                  <li>
+			                    <input type="checkbox"><i class="icon-list-ol"></i>流程列表
+			                  </li>
+			                  <li>
+			                    <input type="checkbox"><i class="icon-list-ul"></i>完成列表
+			                  </li>
+			                  <li>
+			                    <input type="checkbox"><i class="icon-bars"></i>发起列表
+			                  </li>
+			                  <li>
+			                    <input type="checkbox"><i class="icon-bar-chart"></i>已办列表
+			                  </li>
+			                  <li>
+			                    <input type="checkbox"><i class="icon-list-ul"></i>待办列表
+			                  </li>
+			                </ul>
+			              </li>
+			            </ul>
+			            <div class="create-btn-groups">
+			              <div class="btn-box">
+			                <button type="button" class="btn btn-primary btn-save-create">保存</button>
+			                <button type="button" class="btn btn-cancle-create">取消</button>
+			              </div>
+			            </div>
+			          </div>
+			        </div>
+			      </div>
+			    </div>
+
+			    <!--机构树容器-start-->
+			    <div class="treeExamples" id="treeExamples" name="treeExamples">
+			      <ul class="tree tree-chevrons institution-tree-list" id="institutionTree"></ul>
+			    </div>
+			    <!--机构树容器-end-->
+			  </div>
+			</div>
+		</section>
+	</main>
+	<footer class="footer">
+		﻿<div class="footer__inner col-sm-6">
+			<span class="l-inner--bottom">@2016 © 深圳市前海圆舟网络科技股份有限公司.</span>
+		</div>
+		<div class="footer__tools col-sm-6">
+			<ul class="button-group pull-right tools--btn">
+				<li>
+					<button type="button" class="btn tool--btn"><i class="icon icon-angle-up"></i></button>
+				</li>
+			</ul> 
+		</div>
+
+	</footer>
+</section>
+<!--[if lt IE 9]>
+  <script src="./public/html5shiv.min.js"></script>
+<![endif]-->
+<script src="./public/object-fit-polyfill.js"></script>
+<script src="./public/tokenizer.js"></script>
+<script src="./public/parser.js"></script>
+<script src="./public/vminpoly.js"></script>
+<script src="./public/jquery.min.js"></script>
+<script src="./public/zui.min.js"></script>
+<script src="./public/zui.chart.min.js"></script>
+<script src="./public/zui.datatable.js"></script>
+<!-- inject:public:js -->
+<!-- inject public script before customized -->
+<!-- endinject -->
+
+<!-- inject:js -->
+<script src="./js/sys-separation-role-create.js"></script>
+<!-- endinject -->
+</body>
+</html>
