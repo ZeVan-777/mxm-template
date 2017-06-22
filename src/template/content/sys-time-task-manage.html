@@ -1,0 +1,72 @@
+<div class="page-content-wrapper">
+  <div class="row">
+    <div class="col-md-12 col-lg-12 col-sm-12">
+      <ol class="breadcrumb">
+        <li><a href="your/url/"><i class="icon icon-cog"></i>系统设置</a></li>
+        <li><a href="your/url/"><i class="icon icon-time"></i>定时任务管理</a></li>
+      </ol>
+    </div>
+  </div>
+  <div class="time-task-content">
+    <div class="time-task-header clearfix">
+      <div class="header-text pull-left">
+        <i class="icon icon-user"></i>定时任务列表
+      </div>
+      <div class="ope-btn-box pull-right">
+        <button class="create-role btn btn-primary"><i class="icon-plus"></i>新建定时任务</button>
+      </div>
+    </div>
+    <div class="search-box">
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 search-text">
+          表格查询条件:
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-4 col-md-4 col-sm-4">
+          <div class="input-group">
+            <span class="input-group-addon">任务名</span>
+            <input type="text" class="form-control" placeholder="">
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4">
+          <div class="input-group">
+            <span class="input-group-addon">角色名</span>
+            <input type="text" class="form-control" placeholder="">
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-4">
+          <div class="input-group">
+            <span class="input-group-addon">是否有效</span>
+            <select class="form-control">
+              <option value="0">请选择</option>
+              <option value="1">有效</option>
+              <option value="2">失效</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="search-box-btn">
+        <button class="btn btn-success"><i class="icon-search"></i>查询</button>
+        <button class="btn btn-warning"><i class="icon-times"></i>重置</button>
+      </div>
+    </div>
+
+    <div class="table-box" data-checkable="true" data-sortable="true" style="">
+      <table class="table datatable table-striped"></table>
+    </div>
+
+    <!--分页-->
+    <ul class="pager">
+      <li class="previous"><a href="your/nice/url">«上一页</a></li>
+      <li><a href="your/nice/url">1</a></li>
+      <li class="active"><a href="your/nice/url">2</a></li>
+      <li><a href="your/nice/url">3</a></li>
+      <li><a href="your/nice/url">4</a></li>
+      <li><a href="your/nice/url">5</a></li>
+      <li class="next"><a href="your/nice/url">»下一页</a></li>
+    </ul>
+  </div>
+</div>
+<!--<link rel="stylesheet" href="./public/zui.datatable.css">-->
+<!--<script src="./public/zui.datatable.js"></script>-->
